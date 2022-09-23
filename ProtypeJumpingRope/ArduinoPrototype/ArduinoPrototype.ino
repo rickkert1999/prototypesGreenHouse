@@ -1,28 +1,36 @@
   //Set up Pins
-  int pres = A3;
-  int pressureValue;
-  int variable = 0;
+  int button = 7;
+  int buttonValue;
+  int buttonPressedCount = 0;
+  int prevButtonValue;
 
   const int Led = 3; //PWM
 
 void setup() {
-    pinMode(Led,  OUTPUT);  
+    pinMode(Led,  OUTPUT); 
+    pinMode(button, INPUT_PULLUP); 
     Serial.begin(9600);
+    Serial.println("\Button Count:\t");
+
 }
 
 void loop() {
-  //Set up PinMode
-    pressureValue = analogRead(pres);
-//    Serial.print("\tpressureValue:\t"); Serial.println(pressureValue);
+    buttonValue = digitalRead(button);
 
-    if (pressureValue > 1)  {
-      digitalWrite(Led, HIGH);
-      variable ++;
-      Serial.println(variable);
+    if (buttonValue != prevButtonValue)  {
+      
+      if (buttonValue == HIGH){
+        digitalWrite(Led, LOW);
 
     } 
-    else {
-      digitalWrite(Led, LOW);
-    }
 
+    else {
+      digitalWrite(Led, HIGH);
+        buttonPressedCount++;
+        Serial.println(buttonPressedCount);
+
+      }
+      delay(20);
+    }
+    prevButtonValue = buttonValue;
 }
