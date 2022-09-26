@@ -10,8 +10,6 @@ void setup() {
     pinMode(Led,  OUTPUT); 
     pinMode(button, INPUT_PULLUP); 
     Serial.begin(9600);
-    Serial.println("\Button Count:\t");
-
 }
 
 void loop() {

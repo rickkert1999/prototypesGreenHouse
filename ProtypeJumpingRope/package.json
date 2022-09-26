@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "serialport": "^9.2.4",
+    "socket.io": "^4.5.2"
+  },
+  "name": "protypejumpingrope",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rick Peters",
+  "license": "ISC",
+  "description": ""
+}
