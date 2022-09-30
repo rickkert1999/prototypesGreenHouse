@@ -1,0 +1,46 @@
+body {
+  padding: 0;
+  margin: 10px;
+
+  color: white;
+}
+
+#cointCounter {
+  text-align: center;
+}
+
+#scoreBox {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #8400df;
+  margin: 20px 10px;
+}
+
+#topContainer {
+  position: relative;
+  overflow: hidden;
+  background-color: #6000a2;
+  padding: 25px;
+}
+
+#topContainer > h2 {
+  float: left;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#title > h1 {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+iframe {
+  width: 80vw;
+  border: none;
+  padding: none;
+  height: 80vh;
+}

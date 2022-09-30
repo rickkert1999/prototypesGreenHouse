@@ -5,13 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css" />
     <title>Jumpingrope prototype - Greenhouse</title>
   </head>
   <body>
-    <center>
-      <h1>test</h1>
-      <div id="sample"></div>
-    </center>
+    <div id="scoreBox">
+      <div id="topContainer">
+        <h2 id="subTitle">Jump'n gain</h2>
+        <div id="title"><h1>Scoreboard</h1></div>
+      </div>
+
+      <div id="cointCounter">
+        <div id="jumpCoint">
+          <p>Score: <span id="score">0</span></p>
+          <p>JumpCoint: <span id="jumpCoint">0</span></p>
+          <p>€: <span id="euro">0</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div id="box2">
+      <div id="learderboardBox" width="80vw">
+        <h3>LEADERBOARD</h3>
+        <iframe
+          scrolling="no"
+          src="https://v1.embednotion.com/embed/8c42d286bb3d43f9889d6b0b52b93091"
+        ></iframe>
+      </div>
+
+      <div id="priceBox">
+        <h3>PRICE</h3>
+      </div>
+    </div>
 
     <script src="javascript/javascript.js"></script>
   </body>
