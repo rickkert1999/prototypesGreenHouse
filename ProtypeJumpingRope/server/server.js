@@ -43,9 +43,14 @@ io.on("connection", function (socket) {
 });
 
 //declare the port
-http.listen(3000, function () {
-  console.log("listening on *:3000");
-  console.log("listening on: http://localhost:" + serverPort);
+http.listen(serverPort, function () {
+  console.log(
+    "listening on port: " +
+      serverPort +
+      "\n" +
+      "listening on: http://localhost:" +
+      serverPort
+  );
 });
 
 //instal npm's: socket.io, express, serialport -v <10.x.x
