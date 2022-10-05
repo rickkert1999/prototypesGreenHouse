@@ -10,36 +10,39 @@
     <title>Jumpingrope prototype - Greenhouse</title>
   </head>
   <body>
-    <div id="scoreBox">
-      <div id="topContainer">
-        <h2 id="subTitle">Jump'n gain</h2>
-        <div id="title"><h1>Scoreboard</h1></div>
-      </div>
+    <div id="cirle"></div>
+    <div id="wrapperPage">
+        <div id="boxLeft">
+          <h1 id="Title">Jump'n gain</h2>
 
-      <div id="cointCounter">
-        <div id="">
-          <p>Score: <span id="score">0</span></p>
-          <p>JumpCoint: <span id="jumpCoin">0.0</span></p>
-          <p>Etherium: <span id="eth">0.00000000000</span></p>
-          <p>€: <span id="euro">0.00</span></p>
-          <p>Seconds left: <span id="timeLeft">60</span></p>
+          <div id="learderboardBox" width="80vw">
+            <h3>LEADERBOARD</h3>
+            <iframe
+              scrolling="no"
+              src="https://v1.embednotion.com/embed/8c42d286bb3d43f9889d6b0b52b93091"
+            ></iframe>
+          </div>
+        </div>
+        
+      <div id="boxRight">
+        <div id="currentScore">
+          <p id="score">000</p>
+          <p class="detail">Total jumps</p>
+        </div>
+        <div id="wrapperRight"> 
+          <p class="currencies" id="jumpCoin">0.0</p>
+          <p class="currencies" id="eth">0.00000000000</p>
+          <p class="currencies" id="euro">0.00</p>
+          <p class="currencies" id="timeLeft">60</p>
+          <p class="detail">JumpCoint</p>
+          <p class="detail">ETH</p>
+          <p class="detail">EU</p>
+          <p class="detail">Seconds left</p>
         </div>
       </div>
     </div>
 
-    <div id="box2">
-      <div id="learderboardBox" width="80vw">
-        <h3>LEADERBOARD</h3>
-        <iframe
-          scrolling="no"
-          src="https://v1.embednotion.com/embed/8c42d286bb3d43f9889d6b0b52b93091"
-        ></iframe>
-      </div>
-
-      <div id="priceBox">
-        <h3>PRICE</h3>
-      </div>
-    </div>
+   
 
     <script src="javascript/javascript.js"></script>
   </body>

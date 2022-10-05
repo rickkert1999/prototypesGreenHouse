@@ -1,46 +1,120 @@
+@font-face {
+  font-family: "ZuumeExtraLight";
+  src: url(font/ZuumeExtraLight.ttf);
+}
+
+@font-face {
+  font-family: "ZuumeMedium";
+  src: url(font/ZuumeMedium.ttf);
+}
+
+@font-face {
+  font-family: "ZuumeRegular";
+  src: url(font/ZuumeRegular.ttf);
+}
+
+@font-face {
+  font-family: "ZuumeBold";
+  src: url(font/ZuumeBold.ttf);
+}
+
 body {
   padding: 0;
-  margin: 10px;
-
-  color: white;
-}
-
-#cointCounter {
-  text-align: center;
-}
-
-#scoreBox {
   margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #8400df;
-  margin: 20px 10px;
+
+  font-family: "ZuumeMedium";
+  color: #ffffff;
 }
 
-#topContainer {
-  position: relative;
-  overflow: hidden;
-  background-color: #6000a2;
-  padding: 25px;
+html {
+  overflow-y: hidden;
+  overflow-x: hidden;
+  width: 100%;
 }
 
-#topContainer > h2 {
-  float: left;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+#cirle {
+  height: 200vh;
+  width: 100vw;
+  border-radius: 50%;
+  background-color: #222222;
+  left: 35%;
+  top: -50vh;
 
-#title > h1 {
   position: absolute;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+#wrapperPage {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+
+#Title {
+  color: #222222;
+  text-decoration: underline;
+  font-size: 1000%;
+  text-align: center;
+}
+
+#boxRight {
+  height: 100vh;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+  z-index: 2;
+}
+
+#boxRight > div {
+  margin: 5vh 0;
+}
+
+#wrapperRight > p {
+  margin: 0;
+}
+
+#wrapperRight {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  grid-row-gap: 2px;
+  justify-content: center;
+}
+
+.detail {
+  font-family: "ZuumeExtraLight";
+  font-size: 150%;
+  margin: 0;
+}
+
+.currencies {
+  font-family: "ZuumeBold";
+  font-size: 400%;
+}
+
+#score {
+  color: #ecf34c;
+  font-size: 1000%;
+  font-family: "ZuumeBold";
+  border: 3px solid #ecf34c;
+  margin: auto;
+  width: 220px;
+  height: 160px;
+  margin-bottom: 20px;
 }
 
 iframe {
-  width: 80vw;
+  width: 100%;
   border: none;
   padding: none;
   height: 80vh;
 }
+
+iframe > #document > html > body > a {
+  display: none;
+}
+
+/* iframe > *a {
+  display: none;
+} */
