@@ -43,7 +43,7 @@ html {
 
 #logo {
   position: absolute;
-  width: 10%;
+  width: 7.5%;
   bottom: 1%;
   left: 1%;
 }
@@ -135,13 +135,13 @@ html {
 
 .detail {
   font-family: "ZuumeExtraLight";
-  font-size: 150%;
+  font-size: 200%;
   margin: 0;
 }
 
 .currencies {
   font-family: "ZuumeBold";
-  font-size: 400%;
+  font-size: 500%;
 }
 
 .score {
