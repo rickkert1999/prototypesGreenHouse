@@ -10,39 +10,52 @@
     <title>Jumpingrope prototype - Greenhouse</title>
   </head>
   <body>
-    <div id="cirle"></div>
+
+    <div id="background">   
+      <img src="img/ZonderGrain.svg" alt="">
+    </div>
+
+    <div id="logo">
+      <img src="img/MADNIGHTxLABS.svg" alt="">
+    </div>
+
+    <div id="cirle">
+      <div id="drawing"></div>
+      <img src="img/Background.svg" alt="">
+    </div>
     <div id="wrapperPage">
         <div id="boxLeft">
           <h1 id="Title">Jump'n gain</h2>
 
           <div id="learderboardBox" width="80vw">
-            <h3>LEADERBOARD</h3>
+            <!-- <h3>LEADERBOARD</h3>
             <iframe
               scrolling="no"
               src="https://v1.embednotion.com/embed/8c42d286bb3d43f9889d6b0b52b93091"
-            ></iframe>
+            ></iframe> -->
+            <img src="img/placeHolder.png" alt="">
           </div>
         </div>
-        
+
       <div id="boxRight">
         <div id="currentScore">
-          <p id="score">000</p>
+          <p class="score">000</p>
+          <p class="score" id="timeLeft">60</p>
           <p class="detail">Total jumps</p>
+          <p class="detail">Seconds left</p>
         </div>
-        <div id="wrapperRight"> 
+        <div id="wrapperRight">
           <p class="currencies" id="jumpCoin">0.0</p>
           <p class="currencies" id="eth">0.00000000000</p>
           <p class="currencies" id="euro">0.00</p>
-          <p class="currencies" id="timeLeft">60</p>
           <p class="detail">JumpCoint</p>
           <p class="detail">ETH</p>
           <p class="detail">EU</p>
-          <p class="detail">Seconds left</p>
         </div>
       </div>
     </div>
 
-   
+
 
     <script src="javascript/javascript.js"></script>
   </body>

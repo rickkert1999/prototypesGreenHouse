@@ -32,15 +32,40 @@ html {
   width: 100%;
 }
 
-#cirle {
+#background {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+
+  top: -40%;
+  left: -40%;
+}
+
+#logo {
+  position: absolute;
+  width: 10%;
+  bottom: 1%;
+  left: 1%;
+}
+
+#cirle > * {
   height: 200vh;
   width: 100vw;
   border-radius: 50%;
-  background-color: #222222;
-  left: 35%;
   top: -50vh;
 
   position: absolute;
+}
+
+#cirle > #drawing {
+  background-color: #222222;
+  left: 35%; /* change to 40 for Rick and Morty cirle */
+  z-index: 2;
+}
+
+#cirle > img {
+  left: 35%;
   z-index: 1;
 }
 
@@ -75,9 +100,16 @@ html {
   margin: 0;
 }
 
+#currentScore {
+  display: grid;
+  grid-template-columns: 25% 25%;
+  justify-content: center;
+  align-items: center;
+}
+
 #wrapperRight {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
+  grid-template-columns: 33% 33% 33%;
   grid-row-gap: 2px;
   justify-content: center;
 }
@@ -93,7 +125,7 @@ html {
   font-size: 400%;
 }
 
-#score {
+.score {
   color: #ecf34c;
   font-size: 1000%;
   font-family: "ZuumeBold";
