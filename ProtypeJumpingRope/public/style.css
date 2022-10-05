@@ -34,12 +34,11 @@ html {
 
 #background {
   position: absolute;
-  height: 100%;
-  width: 100%;
+  width: 66%;
   z-index: -1;
 
-  top: -40%;
-  left: -40%;
+  top: -15%;
+  left: -15%;
 }
 
 #logo {
@@ -49,7 +48,26 @@ html {
   left: 1%;
 }
 
-#cirle > * {
+#stripes {
+  width: 3px;
+  height: 1000vh;
+  background-color: #ecf34c;
+  z-index: 3;
+  position: absolute;
+  left: 70%;
+}
+
+#greyBox {
+  width: 3px;
+  height: 80vh;
+  background-color: #222222;
+  z-index: 4;
+  position: absolute;
+  left: 70%;
+  top: 10vh;
+}
+
+#circle > * {
   height: 200vh;
   width: 100vw;
   border-radius: 50%;
@@ -58,16 +76,17 @@ html {
   position: absolute;
 }
 
-#cirle > #drawing {
+#circle > #drawing {
   background-color: #222222;
-  left: 35%; /* change to 40 for Rick and Morty cirle */
+  left: 35%; /* change to 40 for Rick and Morty circle */
   z-index: 2;
 }
 
-#cirle > img {
+/* Use this for background behind circle */
+/* #circle > img { 
   left: 35%;
   z-index: 1;
-}
+} */
 
 #wrapperPage {
   display: grid;
@@ -89,7 +108,7 @@ html {
   flex-direction: column;
   flex-wrap: wrap;
 
-  z-index: 2;
+  z-index: 4;
 }
 
 #boxRight > div {
