@@ -7,14 +7,14 @@ const http = require("http").Server(app);
 const io = require("socket.io")(http);
 
 //define server port
-const serverPort = 3000;
+const serverPort = process.env.PORT || 3000;
 
 //serialport npm (serialport)
 const SerialPort = require("serialport");
 const Readline = require("@serialport/parser-readline");
 
 //declair port (serialport)
-var port = new SerialPort("COM5", { boudRate: 96000 });
+var port = new SerialPort(process.env.SERIAL_PORT || "COM5", { boudRate: 96000 });
 
 //Read data that is available and show in terminal (serialport)
 const parser = port.pipe(new Readline({ delimiter: "\r\n" }));
