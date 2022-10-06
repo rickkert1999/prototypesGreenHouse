@@ -30,9 +30,9 @@ socket.on("data", function (data) {
         document.getElementById("timeLeft").innerHTML = timeLeft;
 
         if (timeLeft == 30 || 20 || 15 || 10 || 5 || 3 || 1) {
-          document.getElementById("timeLeft").style.color = "red";
-        } else {
           document.getElementById("timeLeft").style.color = "#ecf34c";
+        } else {
+          document.getElementById("timeLeft").style.color = "red";
         }
       }
     }, 1000);

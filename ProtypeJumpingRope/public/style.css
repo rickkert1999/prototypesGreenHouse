@@ -93,6 +93,10 @@ html {
   grid-template-columns: 40% 60%;
 }
 
+#boxLeft {
+  text-align: center;
+}
+
 #Title {
   color: #222222;
   text-decoration: underline;
