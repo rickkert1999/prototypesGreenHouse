@@ -29,10 +29,18 @@ socket.on("data", function (data) {
       } else {
         document.getElementById("timeLeft").innerHTML = timeLeft;
 
-        if (timeLeft == 30 || 20 || 15 || 10 || 5 || 3 || 1) {
-          document.getElementById("timeLeft").style.color = "#ecf34c";
-        } else {
+        if (
+          timeLeft == 30 ||
+          timeLeft == 20 ||
+          timeLeft == 15 ||
+          timeLeft == 10 ||
+          timeLeft == 5 ||
+          timeLeft == 3 ||
+          timeLeft == 1
+        ) {
           document.getElementById("timeLeft").style.color = "red";
+        } else {
+          document.getElementById("timeLeft").style.color = "#ecf34c";
         }
       }
     }, 1000);

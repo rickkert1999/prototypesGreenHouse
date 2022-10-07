@@ -24,6 +24,8 @@ body {
 
   font-family: "ZuumeMedium";
   color: #ffffff;
+
+  background-color: #d5e5da;
 }
 
 html {
@@ -49,7 +51,7 @@ html {
   top: -15%;
   left: -15%;
 
-  animation: rotation 16s infinite linear;
+  animation: rotation 20s infinite linear;
 }
 
 #logo {
