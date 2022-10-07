@@ -32,6 +32,15 @@ html {
   width: 100%;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 #background {
   position: absolute;
   width: 66%;
@@ -39,6 +48,8 @@ html {
 
   top: -15%;
   left: -15%;
+
+  animation: rotation 16s infinite linear;
 }
 
 #logo {
