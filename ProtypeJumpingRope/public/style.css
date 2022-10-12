@@ -43,28 +43,57 @@ html {
   }
 }
 
-#background {
+#background > img {
   position: absolute;
-  width: 66%;
   z-index: -1;
 
-  top: -15%;
-  left: -15%;
-
-  animation: rotation 20s infinite linear;
+  width: 42%;
 }
 
-#logo {
+#backgroundPortal {
+  top: 5%;
+  animation: pulse-black 20s infinite linear;
+}
+
+@keyframes pulse-black {
+  0% {
+    transform: scale(0.95);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+#title {
   position: absolute;
-  width: 7.5%;
-  bottom: 1%;
+  width: 10%;
+  top: 2%;
+  left: 2%;
+}
+
+#nft > img {
+  position: absolute;
+  bottom: -1%;
+  width: 25%;
+  left: 8.5%;
+}
+
+#logo > img {
+  position: absolute;
+  width: 17.5%;
+  bottom: -1%;
   left: 1%;
 }
 
 #stripes {
   width: 3px;
   height: 1000vh;
-  background-color: #ecf34c;
+  background-color: #fb1650;
   z-index: 3;
   position: absolute;
   left: 70%;
@@ -106,10 +135,6 @@ html {
   grid-template-columns: 40% 60%;
 }
 
-#boxLeft {
-  text-align: center;
-}
-
 #Title {
   color: #222222;
   text-decoration: underline;
@@ -141,6 +166,7 @@ html {
   grid-template-columns: 25% 25%;
   justify-content: center;
   align-items: center;
+  column-gap: 7.5%;
 }
 
 #wrapperRight {
@@ -162,10 +188,10 @@ html {
 }
 
 .score {
-  color: #ecf34c;
+  color: #fb1650;
   font-size: 1000%;
   font-family: "ZuumeBold";
-  border: 3px solid #ecf34c;
+  border: 3px solid #fb1650;
   margin: auto;
   width: 220px;
   height: 160px;
