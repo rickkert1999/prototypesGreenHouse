@@ -14,7 +14,7 @@ const SerialPort = require("serialport");
 const Readline = require("@serialport/parser-readline");
 
 //declair port (serialport)
-var port = new SerialPort(process.env.SERIAL_PORT || "COM5", { boudRate: 96000 });
+var port = new SerialPort(process.env.SERIAL_PORT || "/dev/cu.usbmodem14401", { boudRate: 96000 });
 
 //Read data that is available and show in terminal (serialport)
 const parser = port.pipe(new Readline({ delimiter: "\r\n" }));
