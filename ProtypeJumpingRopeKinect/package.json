@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "express": "^4.18.1",
+    "kinect-azure": "^0.3.0",
+    "socket.io": "^4.5.3"
+  },
+  "name": "protypejumpingrope",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server/server.js -e ejs,js,css,html,jpg,png,scss"
+  },
+  "keywords": [],
+  "author": "Rick Peters",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

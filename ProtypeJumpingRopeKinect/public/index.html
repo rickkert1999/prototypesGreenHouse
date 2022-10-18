@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/reload/reload.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Jumpingrope prototype - Greenhouse</title>
+  </head>
+  <body>
+    <div id="background">
+      <img id="backgroundImg" src="img/BGLos.png" alt="" />
+      <img
+        id="backgroundPortal"
+        src="img/Portal Without bakcground.svg"
+        alt=""
+      />
+    </div>
+
+    <div id="title">
+      <img src="img/Jump'nGainLogoSvg.svg" alt="" />
+    </div>
+
+    <div id="nft">
+      <img src="img/jump&gain_transp.png" alt="" />
+    </div>
+
+    <div id="logo">
+      <img src="img/MadnightxLabs_Logo_CMYK.png" alt="" />
+    </div>
+
+    <div id="stripes"></div>
+    <div id="greyBox"></div>
+
+    <div id="circle">
+      <div id="drawing"></div>
+      <!-- <img src="img/Background.svg" alt=""> -->
+    </div>
+    <div id="wrapperPage">
+      <div id="boxLeft">
+        <!-- <div id="learderboardBox" width="80vw">
+            <h3>LEADERBOARD</h3>
+            <iframe
+              scrolling="no"
+              src="https://v1.embednotion.com/embed/8c42d286bb3d43f9889d6b0b52b93091"
+            ></iframe>
+          </div> -->
+      </div>
+
+      <div id="boxRight">
+        <div id="currentScore">
+          <p class="score" id="score">000</p>
+          <p class="score" id="timeLeft">45</p>
+          <p class="detail">Total jumps</p>
+          <p class="detail">Seconds left</p>
+        </div>
+        <div id="wrapperRight">
+          <p class="currencies" id="jumpCoin">0.0</p>
+          <p class="currencies" id="eth">0.00000000000</p>
+          <p class="currencies" id="euro">0.00</p>
+          <p class="detail">JumpCoin</p>
+          <p class="detail">ETH</p>
+          <p class="detail">EU</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="javascript/javascript.js"></script>
+  </body>
+</html>
