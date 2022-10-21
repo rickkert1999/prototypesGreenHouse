@@ -43,7 +43,6 @@ http.listen(serverPort, function () {
 /////kinect////////////////////////////////////////////////////////
 
 var Kinect2 = require("kinect2");
-
 var kinect = new Kinect2();
 
 if (kinect.open()) {
@@ -58,8 +57,22 @@ kinect.on("bodyFrame", function (bodyFrame) {
   //   }
   // }
 
-  if (bodyFrame.bodies[1].tracked) {
-    console.log(bodyFrame.bodies[1].joints[3]);
+  //look for tracked body
+  const trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
+
+  if (!trackedBody) return;
+
+  if (
+    trackedBody.joints[3].cameraZ > 2 &&
+    trackedBody.joints[3].cameraZ < 2.5
+  ) {
+    console.log(trackedBody.joints[3]);
+
+    //if something is the same place for x amount of seconds start
+
+    //store data point
+
+    //+ 1 each time someone jumps above this point
   }
 });
 
