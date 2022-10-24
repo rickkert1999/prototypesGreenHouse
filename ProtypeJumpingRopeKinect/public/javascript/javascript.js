@@ -1,6 +1,6 @@
 const socket = io();
 
-let timeLeft = 45;
+let timeLeft = 30;
 
 socket.on("data", function (data) {
   console.log(data);
