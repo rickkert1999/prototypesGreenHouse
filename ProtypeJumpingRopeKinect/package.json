@@ -4,18 +4,19 @@
     "kinect2": "^0.2.6",
     "socket.io": "^4.5.3"
   },
-  "name": "protypejumpingrope",
+  "name": "protypejumpingropeKinect",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./server/server.js -e ejs,js,css,html,jpg,png,scss"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Rick Peters",
+  "author": "",
   "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "nodemon": "^2.0.20"
+  "dependencies": {
+    "express": "^4.18.2",
+    "kinect2": "^0.2.3",
+    "socket.io": "^4.5.3"
   }
 }
