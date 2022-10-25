@@ -1,5 +1,6 @@
 //express npm
 const express = require("express");
+const { rmSync } = require("fs");
 const app = express();
 
 //socket.io npm
@@ -36,6 +37,10 @@ http.listen(serverPort, function () {
 });
 
 ///Kinect/////////////////
+let backup = false;
+let jump = 0;
+let heigtJoint;
+let heigtJointPlus;
 
 kinect.on("bodyFrame", function (bodyFrame) {
   //looking in array for tracked bodies and use the first
@@ -43,23 +48,32 @@ kinect.on("bodyFrame", function (bodyFrame) {
 
   if (!trackedBody) return;
 
+  //console.log(trackedBody.joints[3]);
+
   if (
     trackedBody.joints[3].cameraZ > 2 &&
-    trackedBody.joints[3].cameraZ < 2.5
+    trackedBody.joints[3].cameraZ < 2.5 &&
+    !backup
   ) {
-    //console.log(trackedBody.joints[3]);
+    backup = true;
 
     //if something is the same place for x amount of seconds start
     setTimeout(function () {
-      console.log("tets");
+      //store heigt
+      heigtJoint = trackedBody.joints[3].cameraY;
+      heigtJointPlus = heigtJoint + 0.1;
+      console.log(heigtJoint);
+      console.log("jump: " + jump);
+      return heigtJointPlus;
     }, 3000);
-
-    //store heigt
-
-    //add + one if person jumps
-
-    //send to client
   }
+
+  if (trackedBody.joints[3].cameraY > heigtJointPlus) {
+    jump++;
+    console.log("jump: " + jump);
+  }
+
+  //send to client
 });
 
 if (kinect.open()) {
