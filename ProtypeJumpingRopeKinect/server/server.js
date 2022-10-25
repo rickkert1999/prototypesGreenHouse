@@ -39,8 +39,11 @@ http.listen(serverPort, function () {
 ///Kinect/////////////////
 let backup = false;
 let jump = 0;
+<<<<<<< HEAD
 let heigtJoint;
 let heigtJointPlus;
+=======
+>>>>>>> 865fd3f1ee591079f4539c89af0904a97aa1e39c
 
 kinect.on("bodyFrame", function (bodyFrame) {
   //looking in array for tracked bodies and use the first
