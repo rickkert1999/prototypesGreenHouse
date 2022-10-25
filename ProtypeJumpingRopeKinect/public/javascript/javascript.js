@@ -2,12 +2,12 @@ const socket = io();
 
 let timeLeft = 30;
 
-socket.on("data", function (data) {
-  console.log(data);
+socket.on("jump", (jump) => {
+  console.log(jump);
 
   //calculate earnings
-  let score = data;
-  let jumpCoin = data / 15;
+  let score = jump;
+  let jumpCoin = jump / 15;
   let eth = jumpCoin / 28216.70428894;
   let euro = eth * 1364.43;
 
@@ -18,7 +18,7 @@ socket.on("data", function (data) {
 
   //count down timer
   if (score == 1) {
-    const countDown = setInterval(function () {
+    const countDown = setInterval(() => {
       timeLeft--;
       if (timeLeft <= 0 || timeLeft < 1) {
         document.getElementById("timeLeft").innerHTML = 0;
@@ -40,7 +40,7 @@ socket.on("data", function (data) {
         ) {
           document.getElementById("timeLeft").style.color = "red";
         } else {
-          document.getElementById("timeLeft").style.color = "#ecf34c";
+          document.getElementById("timeLeft").style.color = "#fb1650";
         }
       }
     }, 1000);

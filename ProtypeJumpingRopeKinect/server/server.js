@@ -14,19 +14,35 @@ const serverPort = process.env.PORT || 3000;
 var Kinect2 = require("kinect2");
 var kinect = new Kinect2();
 
+//var for kinect npm
+let backup = false;
+let jump = 0;
+let heightJoint;
+let heightJointPlus;
+
 //setup the folder
 app.use(express.static("public")); //set the public folder to static
-app.get("/", function (req, res) {
+app.get("/", (req, res) => {
   res.sendFile("public/index.html", { root: __dirname }); //your html file path
 });
 
 //Whenever someone connects this gets executed
-io.on("connection", function (socket) {
+io.on("connection", (socket) => {
   console.log("A user connected");
+
+  //Whenever someone disconnects this piece of code executed
+  socket.on("disconnect", () => {
+    console.log("A user disconnected");
+  });
+
+  //reset values if pages gets refreshed
+  jump = 0;
+  backup = false;
+  heightJointPlus = undefined;
 });
 
 //declare the port
-http.listen(serverPort, function () {
+http.listen(serverPort, () => {
   console.log(
     "listening on port: " +
       serverPort +
@@ -36,22 +52,11 @@ http.listen(serverPort, function () {
   );
 });
 
-///Kinect/////////////////
-let backup = false;
-let jump = 0;
-<<<<<<< HEAD
-let heigtJoint;
-let heigtJointPlus;
-=======
->>>>>>> 865fd3f1ee591079f4539c89af0904a97aa1e39c
-
-kinect.on("bodyFrame", function (bodyFrame) {
+kinect.on("bodyFrame", (bodyFrame) => {
   //looking in array for tracked bodies and use the first
   const trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
 
   if (!trackedBody) return;
-
-  //console.log(trackedBody.joints[3]);
 
   if (
     trackedBody.joints[3].cameraZ > 2 &&
@@ -61,22 +66,26 @@ kinect.on("bodyFrame", function (bodyFrame) {
     backup = true;
 
     //if something is the same place for x amount of seconds start
-    setTimeout(function () {
-      //store heigt
-      heigtJoint = trackedBody.joints[3].cameraY;
-      heigtJointPlus = heigtJoint + 0.1;
-      console.log(heigtJoint);
+    setTimeout(() => {
+      //store height
+      heightJoint = trackedBody.joints[3].cameraY;
+      heightJointPlus = heightJoint + 0.1;
+      console.log(heightJoint);
       console.log("jump: " + jump);
-      return heigtJointPlus;
+      io.emit("jump", jump);
+      // return heightJointPlus;
     }, 3000);
   }
 
-  if (trackedBody.joints[3].cameraY > heigtJointPlus) {
+  if (trackedBody.joints[3].cameraY > heightJointPlus) {
+    //debounce so it doesn't count more than 1 jump
+
     jump++;
     console.log("jump: " + jump);
-  }
 
-  //send to client
+    //send to client
+    io.emit("jump", jump);
+  }
 });
 
 if (kinect.open()) {
