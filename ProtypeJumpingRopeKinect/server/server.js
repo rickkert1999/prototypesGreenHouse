@@ -16,6 +16,7 @@ var kinect = new Kinect2();
 
 //var for kinect npm
 let backup = false;
+let jumpBackup = true;
 let jump = 0;
 let heightJoint;
 let heightJointPlus;
@@ -69,22 +70,26 @@ kinect.on("bodyFrame", (bodyFrame) => {
     setTimeout(() => {
       //store height
       heightJoint = trackedBody.joints[3].cameraY;
-      heightJointPlus = heightJoint + 0.1;
+      heightJointPlus = heightJoint + 0.15;
       console.log(heightJoint);
       console.log("jump: " + jump);
       io.emit("jump", jump);
-      // return heightJointPlus;
     }, 3000);
   }
 
-  if (trackedBody.joints[3].cameraY > heightJointPlus) {
-    //debounce so it doesn't count more than 1 jump
-
+  //debounce so it doesn't count more than 1 jump
+  if (trackedBody.joints[3].cameraY > heightJointPlus && jumpBackup) {
+    //count jumps
     jump++;
     console.log("jump: " + jump);
 
+    //set the debounce
+    jumpBackup = false;
+
     //send to client
     io.emit("jump", jump);
+  } else if (trackedBody.joints[3].cameraY < heightJointPlus) {
+    jumpBackup = true;
   }
 });
 
