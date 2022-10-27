@@ -57,20 +57,22 @@ kinect.on("bodyFrame", (bodyFrame) => {
   //looking in array for tracked bodies and use the first
   const trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
 
+  // if (trackedBody.joints[4].cameraZ < 2.8) {
+  //   trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
+  // }
+
   if (!trackedBody) return;
 
-  if (
-    trackedBody.joints[3].cameraZ > 2 &&
-    trackedBody.joints[3].cameraZ < 2.5 &&
-    !backup
-  ) {
+  let joint = trackedBody.joints[18];
+
+  if (joint.cameraZ > 2 && joint.cameraZ < 2.5 && !backup) {
     backup = true;
 
     //if something is the same place for x amount of seconds start
     setTimeout(() => {
       //store height
-      heightJoint = trackedBody.joints[3].cameraY;
-      heightJointPlus = heightJoint + 0.15;
+      heightJoint = joint.cameraY;
+      heightJointPlus = heightJoint + 0.02;
       console.log(heightJoint);
       console.log("jump: " + jump);
       io.emit("jump", jump);
@@ -78,7 +80,11 @@ kinect.on("bodyFrame", (bodyFrame) => {
   }
 
   //debounce so it doesn't count more than 1 jump
-  if (trackedBody.joints[3].cameraY > heightJointPlus && jumpBackup) {
+  if (
+    joint.cameraY > heightJointPlus &&
+    trackedBody.joints[14].cameraY > heightJointPlus &&
+    jumpBackup
+  ) {
     //count jumps
     jump++;
     console.log("jump: " + jump);
@@ -88,7 +94,7 @@ kinect.on("bodyFrame", (bodyFrame) => {
 
     //send to client
     io.emit("jump", jump);
-  } else if (trackedBody.joints[3].cameraY < heightJointPlus) {
+  } else if (joint.cameraY < heightJointPlus) {
     jumpBackup = true;
   }
 });

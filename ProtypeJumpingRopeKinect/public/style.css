@@ -43,6 +43,53 @@ html {
   }
 }
 
+#alert {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  background-color: #292a2d;
+  width: 20vw;
+  height: 15vh;
+  border-radius: 0.2vw;
+  position: absolute;
+  z-index: 5;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+  top: 2vh;
+  display: none;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#alert > #alertBox {
+  padding: 2vh;
+}
+
+#alert > #alertBox > h3 {
+  font-size: 0.8vw;
+  font-weight: lighter;
+  margin: 0 0 0.5vh 0;
+}
+
+#alert > #alertBox > p {
+  font-size: 0.6vw;
+  font-weight: lighter;
+  margin: 0;
+}
+
+#alert > #alertBox > button {
+  position: absolute;
+  cursor: pointer;
+  right: 1vw;
+  bottom: 1vw;
+  background-color: #8ab4f8;
+  color: #292a2d;
+  font-size: 0.5vw;
+  border-radius: 0.1vw;
+  border: none;
+  padding: 0.5vw 1vw;
+  font-weight: bold;
+}
+
 #background > img {
   position: absolute;
   z-index: -1;
