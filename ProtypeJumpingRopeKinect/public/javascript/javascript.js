@@ -1,20 +1,31 @@
 const socket = io();
 
 let timeLeft = 30;
+const halfTime = timeLeft / 2;
 
-let readySound = new Audio("../audio/readyLetsGo.wav");
+const collectionMusic = [
+  "J&E_music-1.mp3",
+  "J&E_music-2.mp3",
+  "J&E_music-3.mp3",
+  "J&E_music-4.mp3",
+  "J&E_music-5.mp3",
+  "J&E_music-6.mp3",
+  "J&E_music-7.mp3",
+];
 
-const collection = [
-  "DeepskyRide.mp3",
-  "BoneCrackerJukebox.mp3",
-  "It'sTrickyJukebox.mp3",
-  "BassInvadersJukebox.mp3",
-  "SlayboarderJukebo.mp3",
-  "Superwoman.mp3",
-  "BassInvadersJukebox.mp3",
-  "OverseerScrewUp.mp3",
-  "FlukeSwitchTwitch.mp3",
-  "E-VilleSonicAnimation.mp3",
+const collectionStartSound = ["30-seconden.mp3", "we-gaan-beginnen.mp3"];
+
+const collectionSounds = [
+  "jij-bent-heel-snel.mp3",
+  "jij-gaat-winnen.mp3",
+  "jouw-naam-op-leaderbord.mp3",
+  "lekkerbezig.mp3",
+  "niet-bang-voor-zweet.mp3",
+  "op-de-helft.mp3",
+  "single-whoooo.mp3",
+  "tak-tak-lekkerspringen.mp3",
+  "wedstrijd-met-jezelf.mp3",
+  "wil-jij-die-nft.mp3",
 ];
 
 window.onload = () => {
@@ -30,11 +41,15 @@ socket.on("jump", (jump) => {
   console.log(jump);
 
   if (jump == 0) {
-    readySound.play();
+    audioStartNmbr = Math.floor(Math.random() * collectionStartSound.length);
+    audioStart = new Audio(
+      "../audio/music/" + collectionStartSound[audioStartNmbr]
+    );
+    audioStart.play();
 
     //play random song for motivation
-    audioNmbr = Math.floor(Math.random() * collection.length);
-    audio = new Audio("../audio/" + collection[audioNmbr]);
+    audioNmbr = Math.floor(Math.random() * collectionMusic.length);
+    audio = new Audio("../audio/music/" + collectionMusic[audioNmbr]);
     audio.volume = 0.5;
     audio.play();
   }
@@ -78,6 +93,12 @@ socket.on("jump", (jump) => {
         } else {
           document.getElementById("timeLeft").style.color = "#fb1650";
         }
+      }
+
+      if (timeLeft == halfTime) {
+        soundNmbr = Math.floor(Math.random() * collectionSounds.length);
+        sound = new Audio("../audio/music/" + collectionSounds[soundNmbr]);
+        sound.play();
       }
     }, 1000);
   }

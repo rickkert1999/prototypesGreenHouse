@@ -158,9 +158,9 @@ html {
 
 #title {
   position: absolute;
-  width: 10%;
-  top: 2%;
-  left: 2%;
+  width: 25%;
+  top: 1.5%;
+  left: 0.5%;
 }
 
 #nft > img {
@@ -172,9 +172,9 @@ html {
 
 #logo > img {
   position: absolute;
-  width: 17.5%;
-  bottom: -10%;
-  left: -6%;
+  width: 15%;
+  bottom: 0%;
+  left: -1%;
 }
 
 #stripes {
