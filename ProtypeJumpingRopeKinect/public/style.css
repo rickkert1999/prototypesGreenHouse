@@ -24,8 +24,7 @@ body {
 
   font-family: "ZuumeMedium";
   color: #ffffff;
-
-  background-color: #fb1650;
+  background-color: #080031;
 }
 
 html {
@@ -94,26 +93,67 @@ html {
   position: absolute;
   z-index: -1;
 
-  width: 42%;
+  width: 50%;
 }
 
-#backgroundPortal {
-  top: 5%;
-  animation: pulse-black 20s infinite linear;
-}
-
-@keyframes pulse-black {
+@keyframes GreenAnimation {
   0% {
-    transform: scale(0.95);
+    transform: translate(0, 0);
   }
 
-  70% {
-    transform: scale(1);
+  50% {
+    transform: translate(50px, 100px);
   }
 
   100% {
-    transform: scale(0.95);
+    transform: translate(0, 0);
   }
+}
+
+@keyframes BlueAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-50px, 100px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes OrangeAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(50px, -100px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+#backgroundGreen {
+  top: -12.5%;
+  left: -7.5%;
+  animation: GreenAnimation 10s infinite linear;
+}
+
+#backgroundBlue {
+  top: -20%;
+  left: 0%;
+  animation: BlueAnimation 10s infinite linear;
+}
+
+#backgroundOrange {
+  top: -12.5%;
+  left: -7.5%;
+  animation: OrangeAnimation 10s infinite linear;
 }
 
 #title {
@@ -126,21 +166,21 @@ html {
 #nft > img {
   position: absolute;
   bottom: -1%;
-  width: 40%;
-  left: 1.5%;
+  width: 45%;
+  left: -3%;
 }
 
 #logo > img {
   position: absolute;
   width: 17.5%;
-  bottom: -1%;
-  left: 1%;
+  bottom: -10%;
+  left: -6%;
 }
 
 #stripes {
   width: 3px;
   height: 1000vh;
-  background-color: #fb1650;
+  background-color: #037cff;
   z-index: 3;
   position: absolute;
   left: 70%;
@@ -167,15 +207,9 @@ html {
 
 #circle > #drawing {
   background-color: #222222;
-  left: 35%; /* change to 40 for Rick and Morty circle */
+  left: 35%;
   z-index: 2;
 }
-
-/* Use this for background behind circle */
-/* #circle > img { 
-  left: 35%;
-  z-index: 1;
-} */
 
 #wrapperPage {
   display: grid;
@@ -235,27 +269,12 @@ html {
 }
 
 .score {
-  color: #fb1650;
+  color: #037cff;
   font-size: 1000%;
   font-family: "ZuumeBold";
-  border: 3px solid #fb1650;
+  border: 3px solid #037cff;
   margin: auto;
   width: 220px;
   height: 160px;
   margin-bottom: 20px;
 }
-
-iframe {
-  width: 100%;
-  border: none;
-  padding: none;
-  height: 80vh;
-}
-
-iframe > #document > html > body > a {
-  display: none;
-}
-
-/* iframe > *a {
-  display: none;
-} */
