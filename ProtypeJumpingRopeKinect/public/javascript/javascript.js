@@ -43,14 +43,14 @@ socket.on("jump", (jump) => {
   if (jump == 0) {
     audioStartNmbr = Math.floor(Math.random() * collectionStartSound.length);
     audioStart = new Audio(
-      "../audio/music/" + collectionStartSound[audioStartNmbr]
+      "../audio/sounds/" + collectionStartSound[audioStartNmbr]
     );
     audioStart.play();
 
     //play random song for motivation
     audioNmbr = Math.floor(Math.random() * collectionMusic.length);
     audio = new Audio("../audio/music/" + collectionMusic[audioNmbr]);
-    audio.volume = 0.5;
+    audio.volume = 0.2;
     audio.play();
   }
 
@@ -91,13 +91,13 @@ socket.on("jump", (jump) => {
         ) {
           document.getElementById("timeLeft").style.color = "red";
         } else {
-          document.getElementById("timeLeft").style.color = "#fb1650";
+          document.getElementById("timeLeft").style.color = "#037cff";
         }
       }
 
       if (timeLeft == halfTime) {
         soundNmbr = Math.floor(Math.random() * collectionSounds.length);
-        sound = new Audio("../audio/music/" + collectionSounds[soundNmbr]);
+        sound = new Audio("../audio/sounds/" + collectionSounds[soundNmbr]);
         sound.play();
       }
     }, 1000);

@@ -53,49 +53,53 @@ http.listen(serverPort, () => {
   );
 });
 
+let trackedBody;
+
 kinect.on("bodyFrame", (bodyFrame) => {
   //looking in array for tracked bodies and use the first
-  const trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
+  trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
 
-  // if (trackedBody.joints[4].cameraZ < 2.8) {
-  //   trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
-  // }
+  if (trackedBody) {
+    if (trackedBody.joints[4].cameraZ < 2.6) {
+      trackedBody = bodyFrame.bodies.find(({ tracked }) => !!tracked);
+    }
 
-  if (!trackedBody) return;
+    if (!trackedBody) return;
 
-  let joint = trackedBody.joints[18];
+    let joint = trackedBody.joints[13];
 
-  if (joint.cameraZ > 2 && joint.cameraZ < 2.5 && !backup) {
-    backup = true;
+    if (joint.cameraZ > 2 && joint.cameraZ < 2.5 && !backup) {
+      backup = true;
 
-    //if something is the same place for x amount of seconds start
-    setTimeout(() => {
-      //store height
-      heightJoint = joint.cameraY;
-      heightJointPlus = heightJoint + 0.02;
-      console.log(heightJoint);
+      //if something is the same place for x amount of seconds start
+      setTimeout(() => {
+        //store height
+        heightJoint = joint.cameraY;
+        heightJointPlus = heightJoint + 0.02;
+        console.log(heightJoint);
+        console.log("jump: " + jump);
+        io.emit("jump", jump);
+      }, 3000);
+    }
+
+    //debounce so it doesn't count more than 1 jump
+    if (
+      joint.cameraY > heightJointPlus &&
+      trackedBody.joints[17].cameraY > heightJointPlus &&
+      jumpBackup
+    ) {
+      //count jumps
+      jump++;
       console.log("jump: " + jump);
+
+      //set the debounce
+      jumpBackup = false;
+
+      //send to client
       io.emit("jump", jump);
-    }, 3000);
-  }
-
-  //debounce so it doesn't count more than 1 jump
-  if (
-    joint.cameraY > heightJointPlus &&
-    trackedBody.joints[14].cameraY > heightJointPlus &&
-    jumpBackup
-  ) {
-    //count jumps
-    jump++;
-    console.log("jump: " + jump);
-
-    //set the debounce
-    jumpBackup = false;
-
-    //send to client
-    io.emit("jump", jump);
-  } else if (joint.cameraY < heightJointPlus) {
-    jumpBackup = true;
+    } else if (joint.cameraY < heightJointPlus) {
+      jumpBackup = true;
+    }
   }
 });
 
