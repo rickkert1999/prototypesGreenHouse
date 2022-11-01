@@ -131,7 +131,7 @@ html {
 
 #backgroundGreen {
   top: -12.5%;
-  left: -7.5%;
+  left: -5%;
   animation: GreenAnimation 10s infinite linear;
 }
 
@@ -143,7 +143,7 @@ html {
 
 #backgroundOrange {
   top: -12.5%;
-  left: -7.5%;
+  left: -5%;
   animation: OrangeAnimation 10s infinite linear;
 }
 
@@ -157,8 +157,8 @@ html {
 #nft > img {
   position: absolute;
   bottom: -1%;
-  width: 45%;
-  left: -3%;
+  width: 50%;
+  left: -2%;
 }
 
 #logo > img {
@@ -174,7 +174,7 @@ html {
   background-color: #037cff;
   z-index: 3;
   position: absolute;
-  left: 70%;
+  left: 72.5%;
 }
 
 #greyBox {
@@ -183,7 +183,7 @@ html {
   background-color: #222222;
   z-index: 4;
   position: absolute;
-  left: 70%;
+  left: 72.5%;
   top: 10vh;
 }
 
@@ -198,13 +198,13 @@ html {
 
 #circle > #drawing {
   background-color: #222222;
-  left: 35%;
+  left: 40%;
   z-index: 2;
 }
 
 #wrapperPage {
   display: grid;
-  grid-template-columns: 40% 60%;
+  grid-template-columns: 45% 55%;
 }
 
 #Title {
