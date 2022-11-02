@@ -41,6 +41,9 @@ socket.on("jump", (jump) => {
   console.log(jump);
 
   if (jump == 0) {
+    document.getElementById("drawing").classList.add("flash");
+    document.getElementById("greyBox").classList.add("flash");
+
     audioStartNmbr = Math.floor(Math.random() * collectionStartSound.length);
     audioStart = new Audio(
       "../audio/sounds/" + collectionStartSound[audioStartNmbr]
