@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Jumpingrope prototype - Greenhouse</title>
+    <link rel="icon" type="image/x-icon" href="/img/Jump'nGainLogoSvg.svg" />
+  </head>
+  <body>
+    <div id="background">
+      <img id="backgroundImg" src="" alt="" />
+      <img id="backgroundGreen" src="img/TYNYGroenSVG.svg" alt="" />
+      <img id="backgroundBlue" src="img/TYNYBlauwSVG.svg" alt="" />
+      <img id="backgroundOrange" src="img/TYNYOranjeSVG.svg" alt="" />
+    </div>
+
+    <div id="alert">
+      <div id="alertBox">
+        <h3>Jump'n Gain says:</h3>
+        <p id="test">Page is ready to use</p>
+        <button id="alertBtn">OK</button>
+      </div>
+    </div>
+
+    <div id="title">
+      <img src="img/JumpNGainBoldSVG.svg" alt="" />
+    </div>
+
+    <div id="nft">
+      <img src="img/jumping-girl.png" alt="" />
+    </div>
+
+    <div id="logo">
+      <img src="img/TYNYLogoKortSVG.svg" alt="" />
+    </div>
+
+    <div id="stripes"></div>
+    <div id="greyBox"></div>
+
+    <div id="circle">
+      <div id="drawing"></div>
+    </div>
+    <div id="wrapperPage">
+      <div id="boxLeft"></div>
+
+      <div id="boxRight">
+        <div id="currentScore">
+          <p class="score" id="score">-</p>
+          <p class="score" id="timeLeft">30</p>
+          <p class="detail">Total jumps</p>
+          <p class="detail">Seconds left</p>
+        </div>
+        <div id="wrapperRight">
+          <p class="currencies" id="jumpCoin">0.00</p>
+          <p class="currencies" id="eth">0.000000</p>
+          <p class="currencies" id="euro">0.000</p>
+          <p class="detail">JumpCoin</p>
+          <p class="detail">ETH</p>
+          <p class="detail">EU</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="javascript/javascript.js"></script>
+  </body>
+</html>
