@@ -53,14 +53,18 @@ Kies je gewenste techniek en volg hieronder de stappen.
 
    Zet de arduino op zo als in de volgende afbeelding wordt aangegeven.
    ![Voorbeeld](ProtypeJumpingRope/public/img/exampleMat.jpeg)
+   
    Figuur 1. voorbeeld van de druk mat met sponzen
 
 5. Arduino circuit
 
    Zet de arduino op zo als in de volgende afbeelding wordt aangegeven.
    ![Voorbeeld](ProtypeJumpingRope/public/img/arduinoCircuit.jpg)
+   
    Figuur 2. Arduino circuit
+   
    ![Voorbeeld](ProtypeJumpingRope/public/img/littleMat.jpeg)
+   
    Figuur 3. Arduino met kleine druk mat
 
 ## Kinect
@@ -97,4 +101,5 @@ Na het starten van de server zal het prototype klaar zijn op te gebruiken. Let o
 # Voorbeeld
 
 ![Voorbeeld](ProtypeJumpingRopeKinect/public/img/JumpNGainInAction)
+
 Figuur 4. Het Jump'n Gain Prototype in actie
